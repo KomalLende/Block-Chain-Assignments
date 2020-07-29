@@ -1,0 +1,44 @@
+//Make an Ethereum based ReportCard submission smart contract and deploy it on ropston network.
+//Input: Name, Roll no, Batch, Marks of 4 subjects and status (pass or fail). Host it on ropsten network with test.
+
+
+pragma solidity >=0.4.17 <0.7.0;
+
+contract ReportCard{
+    
+    string public Name;
+    
+    uint public RollNo;
+    
+    uint public Batch;
+    
+    uint public MarksOfMaths;
+    uint public MarksOfPython;
+    uint public MarksOfScience;
+    uint public MarksOfJava;
+    
+    string public Status;
+    
+    function ReportCard(string newName, uint newRollno, uint newBatch, uint newMaths, uint newPython, 
+    uint newScience, uint newJava, string newStatus)public
+    {
+        Name = newName;
+        RollNo = newRollno;
+        Batch = newBatch;
+        MarksOfMaths = newMaths;
+        MarksOfPython = newPython;
+        MarksOfScience = newScience;
+        MarksOfJava = newJava;
+        Status = newStatus;
+        
+    }
+    
+    
+    
+    function getDetails()public view returns(string, uint, uint, uint, uint, uint, uint, string)
+    {
+        return(Name, RollNo, Batch, MarksOfMaths, MarksOfPython, MarksOfScience, MarksOfJava, Status);
+    }
+}
+
+Contract Address : 0xBDcC29c6f29de8D1CC3d51f4fA8634d5a928f80f Check from link : https://ropsten.etherscan.io/address/0xbdcc29c6f29de8d1cc3d51f4fa8634d5a928f80f
